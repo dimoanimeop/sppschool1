@@ -1,0 +1,784 @@
+
+/* =====================================
+   SAARTHI PLAY PUBLIC SCHOOL
+   Main Stylesheet
+===================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+    --background: #f5f8ff;
+    --surface: #ffffff;
+    --text: #172033;
+    --muted: #718096;
+    --border: #e5eaf3;
+    --radius: 18px;
+    --shadow: 0 8px 28px rgba(28, 57, 110, 0.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 7%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.school-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.school-logo,
+.footer-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    color: white;
+    font-weight: 800;
+    font-size: 19px;
+    flex-shrink: 0;
+    box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+.school-info h1 {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.school-info p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+.menu-btn {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: white;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 23px;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 5%;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-link {
+    padding: 9px 17px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #596579;
+    transition: 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+/* =====================================
+   WELCOME / HERO
+===================================== */
+
+.welcome-section {
+    margin: 32px auto;
+    width: 86%;
+    max-width: 1250px;
+    min-height: 340px;
+    padding: 50px 7%;
+    border-radius: 26px;
+    background: linear-gradient(120deg, #1d4ed8, #3b82f6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.16);
+}
+
+.welcome-section::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    right: 5%;
+    top: -130px;
+}
+
+.welcome-section::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    right: 12%;
+    bottom: -150px;
+}
+
+.welcome-content {
+    max-width: 580px;
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-tag {
+    display: inline-block;
+    padding: 7px 13px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+}
+
+.welcome-content h2 {
+    font-size: clamp(34px, 4.5vw, 54px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 20px 0 15px;
+}
+
+.welcome-content p {
+    max-width: 450px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #eaf1ff;
+    margin-bottom: 25px;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    color: var(--primary-dark);
+    padding: 13px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.welcome-illustration {
+    width: 230px;
+    height: 230px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.illustration-circle {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 85px;
+    backdrop-filter: blur(8px);
+}
+
+.floating-icon {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: white;
+    font-size: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.floating-icon:first-of-type {
+    top: 20px;
+    right: 5px;
+}
+
+.floating-icon:last-of-type {
+    bottom: 15px;
+    left: 5px;
+}
+
+/* =====================================
+   GENERAL SECTIONS
+===================================== */
+
+.section {
+    width: 86%;
+    max-width: 1250px;
+    margin: 55px auto;
+    scroll-margin-top: 100px;
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    font-size: 27px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+/* =====================================
+   QUICK ACCESS CARDS
+===================================== */
+
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.quick-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px 22px;
+    min-height: 180px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.quick-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: #c6d8ff;
+}
+
+.quick-icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    background: var(--primary-light);
+    font-size: 26px;
+    margin-bottom: 17px;
+}
+
+.quick-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.quick-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* =====================================
+   NOTICE CARDS
+===================================== */
+
+.notice-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.notice-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px;
+    border-left: 4px solid var(--primary);
+    transition: box-shadow 0.2s;
+}
+
+.notice-card:hover {
+    box-shadow: var(--shadow);
+}
+
+.notice-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 7px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 10px;
+    letter-spacing: 0.7px;
+    font-weight: 800;
+    margin-bottom: 13px;
+}
+
+.notice-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.notice-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.notice-date {
+    display: block;
+    margin-top: 15px;
+    color: #8994a6;
+    font-size: 12px;
+}
+
+/* =====================================
+   FEATURE PANELS
+===================================== */
+
+.feature-panel {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: var(--radius);
+}
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background: var(--primary-light);
+    font-size: 29px;
+    flex-shrink: 0;
+}
+
+.feature-panel h3 {
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.feature-panel p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =====================================
+   CONTACT
+===================================== */
+
+.contact-section {
+    margin-bottom: 65px;
+}
+
+.contact-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.contact-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    margin: 12px 0;
+    color: #596579;
+    font-size: 14px;
+}
+
+.contact-card a:not(.primary-btn) {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.contact-card .primary-btn {
+    margin-top: 15px;
+    background: var(--primary);
+    color: white;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.app-footer {
+    background: #111c32;
+    color: white;
+    text-align: center;
+    padding: 42px 20px 25px;
+}
+
+.footer-logo {
+    margin: 0 auto 15px;
+    background: #3b82f6;
+    box-shadow: none;
+}
+
+.app-footer h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.app-footer > p {
+    color: #aebbd1;
+    font-size: 13px;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 25px;
+    padding-top: 20px;
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 950px) {
+    .app-header {
+        padding: 15px 5%;
+    }
+
+    .navigation {
+        gap: 2px;
+        padding: 10px 3%;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        padding: 8px 11px;
+        font-size: 13px;
+    }
+
+    .welcome-section,
+    .section {
+        width: 90%;
+    }
+
+    .welcome-section {
+        padding: 40px 5%;
+    }
+
+    .welcome-illustration {
+        width: 180px;
+        height: 180px;
+    }
+
+    .illustration-circle {
+        width: 140px;
+        height: 140px;
+        font-size: 68px;
+    }
+
+    .quick-access-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    .app-header {
+        padding: 12px 5%;
+        gap: 10px;
+    }
+
+    .school-logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+
+    .school-info h1 {
+        font-size: 14px;
+        max-width: 235px;
+    }
+
+    .school-info p {
+        font-size: 12px;
+    }
+
+    .menu-btn {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 5%;
+        gap: 4px;
+        background: white;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 11px 14px;
+        font-size: 14px;
+    }
+
+    .welcome-section {
+        width: 90%;
+        min-height: auto;
+        margin: 22px auto 35px;
+        padding: 30px 24px;
+        border-radius: 22px;
+    }
+
+    .welcome-content {
+        width: 100%;
+    }
+
+    .welcome-content h2 {
+        font-size: 36px;
+        letter-spacing: -1px;
+        margin: 16px 0 12px;
+    }
+
+    .welcome-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .welcome-illustration {
+        display: none;
+    }
+
+    .welcome-section::before {
+        right: -170px;
+    }
+
+    .section {
+        width: 90%;
+        margin: 40px auto;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+    .quick-access-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .quick-card {
+        padding: 18px 14px;
+        min-height: 155px;
+        border-radius: 15px;
+    }
+
+    .quick-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 23px;
+        border-radius: 12px;
+        margin-bottom: 13px;
+    }
+
+    .quick-card h3 {
+        font-size: 14px;
+    }
+
+    .quick-card p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .notice-list {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .notice-card {
+        padding: 20px;
+    }
+
+    .notice-card h3 {
+        font-size: 16px;
+    }
+
+    .notice-card p {
+        font-size: 13px;
+    }
+
+    .feature-panel {
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .feature-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 23px;
+        border-radius: 12px;
+    }
+
+    .feature-panel h3 {
+        font-size: 15px;
+    }
+
+    .feature-panel p {
+        font-size: 13px;
+    }
+
+    .contact-card {
+        padding: 22px;
+    }
+
+    .contact-card h3 {
+        font-size: 18px;
+    }
+
+    .app-footer {
+        padding: 35px 18px 22px;
+    }
+
+    .app-footer h3 {
+        font-size: 15px;
+    }
+
+    .copyright {
+        font-size: 11px !important;
+        line-height: 1.8;
+    }
+}
+
+/* =====================================
+   SMALL MOBILE SCREENS
+===================================== */
+
+@media (max-width: 360px) {
+    .school-info h1 {
+        font-size: 12px;
+    }
+
+    .welcome-content h2 {
+        font-size: 31px;
+    }
+
+    .quick-card {
+        padding: 15px 11px;
+    }
+
+    .quick-card h3 {
+        font-size: 13px;
+    }
+}
